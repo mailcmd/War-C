@@ -65,7 +65,7 @@ Once you create an instance of the class, you will be able to move the cursor ju
   
     **`75 + 75 * (62/90) * 1 = 126.667`**
   
-  y entre "S" y "C" 
+  and between "S" and "C" 
   
     **`62 + 62 * (54/90) * 1 = 99.2`**
 
