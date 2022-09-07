@@ -10,19 +10,19 @@ Once you create an instance of the class, you will be able to move the cursor ju
 
 ## Parameters
 
-- `activeClass` (default: '--ac-active')
+- `activeClass` (default: `'--ac-active'`)
    
   This class will be added to the currently selected element and removed from all other elements belonging to the selected set. You can create CSS rules to decorate this class or you can let War-C do it for you (I wouldn't).
    
-- `selector` (default: 'button:visible, input[type="button"]:visible, a:visible')
+- `selector` (default: `'button:visible, input[type="button"]:visible, a:visible'`)
   
   This string allows to specify which elements will be part of the selected set.
 
-- `loopEnabled` (default: false)
+- `loopEnabled` (default: `false`)
 
   If is `true`, when you move in a direction where there are no elements left in the selected set, War-C will continue to search for elements starting from the opposite end of that direction.
 
-- `anglePenalty` (default: 1)
+- `anglePenalty` (default: `1`)
 
   When you move in one direction, War-C selects all the elements that are in that direction with a viewing angle of almost 180 degrees, then calculates the distance to each of them, and selects the closest one. Well, this is not quite true, with `anglePenalty` equal to 1, War-C will apply a penalty to all those elements that are not at zero angle with respect to the chosen direction. 
   
@@ -59,7 +59,7 @@ Once you create an instance of the class, you will be able to move the cursor ju
   
     **`distance * (angle/90) * anglePenalty`** 
   
-  De este modo, si `anglePenalty` es 1, para War-C la distancia entre "S" y "A" será 
+  So, if anglePenalty is 1, for War-C the distance between "S" and "A" will be
   
     **`75 + 75 * (62/90) * 1 = 126.667`**
   
@@ -69,11 +69,16 @@ Once you create an instance of the class, you will be able to move the cursor ju
 
   Note that even in this case, the penalty will not be enough, and "C", with `anglePenalty` equal to 1, will still be at a shorter distance than "A" and "B". That is why `anglePenalty` exists. If for example `anglePenalty` were equal to 2, the distance to "C" would be 136.4, which would make War-C jump to "B" instead of jumping to "C".
 
-- `remember` (default: true)
-
+- `remember` (default: `true`)
   
-- allowMouseSelect: true,
-- enterTriggerClick: true,
-
+  When this option is `true` it causes War-C to remember the previous selected element so that it has priority over all other elements that are in the same direction. 
+  
+- `allowMouseSelect` (default: `true`)
+  
+  Set to `true` allows you to select an element by left-clicking with the mouse.
+  
+- `enterTriggerClick` (default: `true`)
+  
+  Set to `true` will cause pressing `ENTER` on a selected element to trigger the element's `click` event. Set to `false` will have the default behavior of the element when `ENTER` is pressed.
 
 
