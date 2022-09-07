@@ -8,7 +8,7 @@ First you need instantiate the class and second... well, basically that's all, i
 
 Once you create an instance of the class, you will be able to move the cursor jumping between all elements that match selector (selected set). You can set a selector or use the default: 
 
-      **`button:visible, input[type="button"]:visible, a:visible`**
+      `button:visible, input[type="button"]:visible, a:visible`
 
 ## Parameters
 
