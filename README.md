@@ -1,6 +1,6 @@
 # War-C
 
-War-C (**W**eb **AR**row **C**ontrol) is a simple javascript class to allow control navigation on a webpage with arrow keys on your keyboard. The concept is simple, you can move throught some selected elements on your webpage just pressing arrow keys and trigger click event pressing ENTER key.
+War-C (**W**eb **AR**row **C**ontrol) is a simple javascript class to allow control navigation on a webpage with the arrow keys on your keyboard. The concept is simple, you can move throught some selected elements on your webpage just pressing arrow keys and trigger click event pressing ENTER key.
 
 ## How it works?
 
@@ -81,4 +81,24 @@ Once you create an instance of the class, you will be able to move the cursor ju
   
   Set to `true` will cause pressing `ENTER` on a selected element to trigger the element's `click` event. Set to `false` will have the default behavior of the element when `ENTER` is pressed.
 
+## Methods
 
+- `enable()` and `disable()` 
+  
+  Do you need any explanation of what these methods do? ... Really? ... Ok, here goes: they enable or disable navigation with the arrow keys. 
+  
+- `selectElement(el)`
+  
+  Pretty self-explanatory, isn't it? It allows to arbitrarily select any element of the set.
+  
+- `move(dir)`
+  
+  Allows you to move in a direction programmatically. `dir` can be any of these constants: DIR_UP, DIR_DOWN, DIR_LEFT or DIR_RIGHT. 
+
+## Dependencies
+
+  You'll have to excuse me, but War-C needs **JQuery**. Sorry, I was too lazy to write all the code in pure javascript. Anyway, if you want to do it, it's not too difficult, you can replace the few lines that use it, or create a fake mini JQuery with the functions `offset`, `remove`, `click`, `each`, `width`, `height`, `addClass`, `removeClass` and the property `length`.  
+  
+  
+  
+  
