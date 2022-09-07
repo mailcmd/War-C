@@ -6,10 +6,21 @@ function WarC(opts) {
         const DIR_RIGHT = 39;
         const DIR_DOWN = 40;
         const DIR_LEFT = 37;
+        const ENTER = 13;
+        
         const metric = { left: 'width', top: 'height'};
+        
         const _this = this;
 
         _this.move_wrapper = function (e) {
+            if (e.keyCode == ENTER) {
+                if (_this.options.enterTriggerClick) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $(_this.activeElement).click()
+                }
+                return;
+            }
             _this.move(e.keyCode);
         };
 
@@ -78,8 +89,8 @@ function WarC(opts) {
                 if ($_curr) $_curr.remove();
                 _this.lastElement.factor = 1;
                 _this.lastElement = $curr[0];
-                _this.lastElement.factor = _this.options.remember ? 0.5 : 1;
-                _this.selectElement($nearest);
+                _this.lastElement.factor = _this.options.remember ? 0.1 : 1;
+                _this.selectElement($nearest);                
             }
             
         };
@@ -87,7 +98,17 @@ function WarC(opts) {
         _this.selectElement = function(e) {
             $('.'+_this.options.activeClass).removeClass(_this.options.activeClass);
             $(e).addClass(_this.options.activeClass).focus()
+            _this.activeElement = e;
         }
+        
+        _this.enable = function() {
+            document.removeEventListener("keydown", _this.move_wrapper);
+            document.addEventListener("keydown", _this.move_wrapper);        
+        };
+        
+        _this.disable = function() {
+            document.removeEventListener("keydown", _this.move_wrapper);
+        };
         
         // Library ////////////////////////////////////////////////////////////////////////
         
@@ -137,14 +158,12 @@ function WarC(opts) {
             anglePenalty: 1,
             loopEnabled: false,
             remember: true,
-            clickResponsive: true,
+            allowMouseSelect: true,
+            enterTriggerClick: true,
             debug: 0
         };
 
         $.extend(_this.options, opts);
-        
-        document.removeEventListener("keydown", _this.move_wrapper);
-        document.addEventListener("keydown", _this.move_wrapper);
         
         if (!classExists(_this.options.activeClass)) {
             document.head.innerHTML += `
@@ -157,7 +176,7 @@ function WarC(opts) {
             `;
         }
         
-        if (_this.options.clickResponsive) {
+        if (_this.options.allowMouseSelect) {
             $(_this.options.selector).click( e => _this.selectElement(e.target) );
         }
         
@@ -165,6 +184,8 @@ function WarC(opts) {
         _this.selectElement(_this.options.initialElement);
         
         _this.debug = _this.options.debug;
+
+        _this.enable();        
 
         return _this;
 
