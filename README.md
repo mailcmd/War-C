@@ -6,11 +6,11 @@
 
 First you need instantiate the class and second... well, basically that's all, it is ready. But obviously if you like can pass some parameters for better tunning of War-C. 
       
-      `const warc = new WarC({ ... });`
+      const warc = new WarC({ ... });
       
       or 
       
-      `const warc = WarC({ ... });`
+      const warc = WarC({ ... });
       
 Once you create an instance of the class, you will be able to move the cursor jumping between all elements that match selector (selected set). You can set a selector or use the default: 
 
