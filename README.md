@@ -4,7 +4,7 @@
 
 ## How it works?
 
-First you need instantiate the class and second... well, basically that's all, it is ready. But obviously if you like can pass some parameters for better tunning of War-C. 
+First you need instantiate the class and second... well, basically that's all, it is ready. But obviously if you like you can pass some parameters for better tunning of War-C. 
       
       const warc = new WarC({ ... });
       
