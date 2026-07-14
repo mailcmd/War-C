@@ -154,7 +154,7 @@ function WarC(opts) {
         opts = opts || {};
         _this.options = {
             activeClass: '--ac-active',
-            selector: 'button:visible, input[type="button"]:visible, a:visible',
+            selector: 'button, input[type="button"], a',
             anglePenalty: 1,
             loopEnabled: false,
             remember: true,
