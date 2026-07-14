@@ -2,6 +2,10 @@
 
 **War-C** (**W**eb **AR**row **C**ontrol) is a simple javascript class to allow control navigation on a webpage with the arrow keys on your keyboard. The concept is simple, you can move throught some selected elements on your webpage just pressing arrow keys and trigger click event pressing ENTER key.
 
+## Demo
+
+See a simple (demo)[https://mailcmd.github.io/War-C/]
+
 ## How it works?
 
 First you need instantiate the class and second... well, basically that's all, it is ready. But obviously if you like you can pass some parameters for better tunning of War-C. 
