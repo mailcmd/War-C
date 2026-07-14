@@ -4,7 +4,7 @@
 
 ## Demo
 
-See a simple (demo)[https://mailcmd.github.io/War-C/]
+See a simple [demo](https://mailcmd.github.io/War-C/)
 
 ## How it works?
 
