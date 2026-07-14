@@ -163,7 +163,7 @@ function WarC(opts) {
             debug: 0
         };
 
-        $.extend(_this.options, opts);
+        _this.options = {..._this.options, ...opts};
         
         if (!classExists(_this.options.activeClass)) {
             document.head.innerHTML += `
