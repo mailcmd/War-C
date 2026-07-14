@@ -12,7 +12,7 @@
         font-size: 28px;
       }  
       .--ac-active, input {
-        background-color: blue !important;
+          background-color: blue !important;
       }
     </style>
   </head>
@@ -105,17 +105,21 @@
       </tr>      
     </table>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="war-c.js"></script>
     <script>
         var ac, i = 0;
         var removeButtons = [ 7,8,11,13, 17,18 ]; // play with this array
-        document.querySelectorAll('button').forEach( b => (removeButtons.includes(i) ? (i++, b.remove()) :  (b.setAttribute('n', i), b.innerHTML = i++) ) );
+      document.querySelectorAll('button').forEach(
+          b => (removeButtons.includes(i)
+                ? (i++, b.remove())
+                :  (b.setAttribute('n', i), b.innerHTML = i++) )
+      );
         
         window.onload = () => warc = WarC({ 
-            initialElement: $('button[n="12"')[0],
+            initialElement: document.querySelector('button[n="0"'),
             anglePenalty: 100,
-            loopEnabled: true            
+            loopEnabled: true,
+            
         });
             
     </script>
